@@ -1,0 +1,5 @@
+import qrcode
+import cv2
+
+img = qrcode.make('www.linkedin.com/in/nkwam-philip')
+img.save('Pass.png')
