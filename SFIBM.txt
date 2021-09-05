@@ -1,0 +1,252 @@
+I am starting on a FAQ for people who want to create their own SFIBM 
+characters, here is a part of it where I am describing the .SEQ file.
+If possible could any of you help to fill in some of it.  Later I will
+add instructions on how to add graphics, and which files are used for 
+which graphic.
+
+To create new characters
+
+1. Get a sample picture, see if the background is a different palette from
+   the character. (screen theif/pcxdump; neopaint)
+2. If so, get pictures of character frames
+3. Find out the BKG colors, take it out (may need to crop) (display)
+4. Save palette and load it onto other pictures, remove unused color and
+   autocrop (display)
+5. Change 1st color to lighter grey
+6. Load SFIBM palette
+7. Change color 1 to 42:16:32
+8. Change new BKG color to 16:16:32 (can save 7 and 8 as a palette)
+9. Save as PCX, run one2ide (batch)
+10. Check with LSP, all messed up palettes, just change to next even #
+
+
+
+.VOC files
+
+!l.voc          Character gets K.O.ed
+select.voc      Character is chosen
+a??.voc         Punch is thrown
+b!.voc          Country name
+d??.voc         Punch connects
+defence.voc     Blocked hit
+end.voc         If you don't continue
+kwang.voc       Fall from throw
+lose.voc        "You Lose"
+win.voc         "You Win"
+new.voc         Here comes a new challenger
+pause.voc       Pause the game
+perfect.voc     Perfect victory
+ting.voc        Change selection at menu screen/select screen
+vs.voc          .vs screen
+vsend.voc       victory screen
+wavefx.voc      2 projectiles hit
+!w.voc          Character's win speech
+
+! represents the player
+Player  Game sees as
+1       1
+2       2
+3       3
+4       4
+5       5
+6       6
+7       7
+8       8
+9       9
+10      A
+11      B
+12      C
+
+
+Numbers for each sequence
+
+1   2    3    4 5
+119 125  17   0 A21N0Ax   
+
+1       Sequence number used at top of .seq file
+2       Frame used in sequence
+3       Positive number tells how far forward sprite will move
+        Negative number tells how far backward sprite will move  
+4       Positive number tells how far down sprite will move  
+        Negative number tells how far up sprite will move  
+
+5       This is a 7 character sequence which described the properties if             
+        the sequence
+
+        abcdefg
+        A21N0Ax
+        
+a       ?????
+        A-
+        M-
+        F-
+        D-
+
+b       The number specifies the power of the attack.  The number is also
+        proportionate to the dizzy meter.
+
+c       The number specifies the hit reaction.  Chack numbers 70-79 in the
+        .seq numbers for reference
+
+d       The letter specifies how the sprite will be seen
+        N- Normal
+        R-
+        F- Mirrors frame
+        D-
+
+e       The number specifies what can cancel a move
+        0- Cannot be cancelled by anything
+        1- Can be cancelled by a special move
+        2- Can be cancelled by a normal or special move
+        7- Can be cancelled by anything (walking, jumping, etc)
+
+f       The letter specifies the offensive properties of a move
+        x- move cannot hit you
+        A- move can hit, can be blocked high or low
+        H- move can hit, must be blocked low
+        L- move can hit, must be blocked high
+
+g       The letter specifies the invincibility of a move
+        x- not invincible
+        A- invincible
+
+-----------------------------------------------------------------------------
+Numbers in .SEQ file.
+
+0       Standing Still
+1       Jumping up
+2       Kneeling
+3       Walking back
+4       Jumping back
+5       Kneeling back
+6       Walking forward
+7       Jumping forward
+8       Kneeling forward
+9       High block
+10      Low block
+11      Far light kick
+12      Far medium kick
+13      Far hard kick
+14      Far light punch
+15      Far medium punch
+16      Far hard punch
+17      Close light kick
+18      Close medium kick
+19      Close hard kick
+20      Close light punch
+21      Close medium punch
+22      Close hard punch
+23      Jump up light kick
+24      Jump up medium kick
+25      Jump up hard kick
+26      Jump up light punch
+27      Jump up medium punch
+28      Jump up hard punch
+29      Jump towards/away light kick
+30      Jump towards/away medium kick
+31      Jump towards/away hard kick
+32      Jump towards/away light punch
+33      Jump towards/away medium punch
+34      Jump towards/away hard punch
+35      Ducking light kick
+36      Ducking medium kick
+37      Ducking hard kick
+38      Ducking light punch
+39      Ducking medium punch
+40      Ducking hard punch
+41      Victory pose 1
+42      Victory pose 2
+43      Knocked out
+44      Draw game
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66      Projectile dissipation
+67      Hit while blocking high
+68      Hit while blocking low
+69
+70
+71      hit reaction "0"
+72      hit reaction "1"
+73      hit reaction "2"
+74      hit reaction "3"
+75      hit reaction "4"
+76      hit reaction "5"
+77      hit reaction "6"
+78      hit reaction "7"
+79      hit reaction "8"
+80      dizzy
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108     Get up from a K.O.
+109     Jumping ???
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+
+BATCH FILES
+
+CFG FILES
+
+BACKGROUND for original
+BACKGROUND width for original
+.IDE for original
+.SEQ for original
+.KEY for original
+.MDI for original
